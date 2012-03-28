@@ -10,10 +10,12 @@ public class CharacterMotor : MonoBehaviour {
 	public GameObject mainCam;
 	public float sensitivity = 5.0F;
 	public float sprintSpeed = 12.0F;
+	public GameObject GunLight;
 	
 	// Use this for initialization
 	void Start () {
 	Screen.showCursor = false;
+	GunLight.active = false;
 	}
 	
 	// Update is called once per frame
@@ -33,6 +35,17 @@ public class CharacterMotor : MonoBehaviour {
 		{
 			moveDirection.y = jumpHeight;
 		}
+		if (Input.GetKeyDown(KeyCode.F) == true)
+		{
+			if (GunLight.active == false)
+			{
+			GunLight.active = true;	
+			}
+			else
+			{
+			GunLight.active = false; 	
+			}
+		}
 		moveDirection.y = moveDirection.y - gravity * Time.deltaTime;
 		mainPerson.Move(moveDirection * Time.deltaTime);
 		
@@ -41,4 +54,6 @@ public class CharacterMotor : MonoBehaviour {
 		this.transform.Rotate(0, horizontalRotate, 0);
 		mainCam.transform.Rotate(-verticalRotate, 0, 0);
 	}
+	
+	
 }

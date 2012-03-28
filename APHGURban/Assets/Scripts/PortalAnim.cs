@@ -13,17 +13,17 @@ public class PortalAnim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if (Input.GetKey(KeyCode.W) == true)
+
+		if (Input.GetKey(KeyCode.W) == true && Input.GetKey(KeyCode.LeftShift) == false)
+			{
+				animation.Play("PortalGunBob");
+				
+			}
+	 	else if (Input.GetKey(KeyCode.LeftShift) == true)
 		{
-			animation.Play("PortalGunBob");
-			
+			animation.Play("PortalGunSprint");	
 		}
- 	else 
-		{
-			animation.Stop("PortalGunBob");
-			animation.Play("PortalGunIdle");	
-		}
-			
-	
+		
+		
 	}
 }
