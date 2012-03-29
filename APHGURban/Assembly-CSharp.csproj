@@ -47,6 +47,8 @@
      <Compile Include="Assets\Scripts\AIScript.cs" />
      <Compile Include="Assets\Scripts\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\CreateBPortal.cs" />
+     <Compile Include="Assets\Scripts\CreateYPortal.cs" />
      <Compile Include="Assets\Scripts\PortalAnim.cs" />
      <Compile Include="Assets\Scripts\PortalB.cs" />
      <Compile Include="Assets\Scripts\PortalGunShoot.cs" />

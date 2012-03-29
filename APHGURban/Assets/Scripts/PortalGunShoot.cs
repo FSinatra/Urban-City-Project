@@ -7,6 +7,7 @@ public class PortalGunShoot : MonoBehaviour {
 	public GameObject PortalGun;
 	public float force = 2000;
 	public GameObject BulletSpawn;
+	public float TimeToLive = 2.0F;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,12 +20,14 @@ public class PortalGunShoot : MonoBehaviour {
 			Transform bullet; 
 			bullet = (Transform)Instantiate(PortalBulletBlue.transform, PortalGun.transform.position, BulletSpawn.transform.rotation);
 			bullet.rigidbody.AddForce(bullet.transform.forward * force);
+			Destroy(bullet.gameObject, TimeToLive);
 		}
 	else if (Input.GetKeyDown(KeyCode.Mouse1) == true)
 		{
 			Transform bullet; 
 			bullet = (Transform)Instantiate(PortalBulletYellow.transform, PortalGun.transform.position, BulletSpawn.transform.rotation);
 			bullet.rigidbody.AddForce(bullet.transform.forward * force);
+			Destroy(bullet.gameObject, TimeToLive);
 		}
 	}
 }
